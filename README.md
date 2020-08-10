@@ -1,5 +1,15 @@
-# Package Builder
+# Package Builder on Docker
 
+## Docker Instructions
+### To Build an Image
+docker build -t spfy_app:latest .
+
+### To Run a container
+ docker run -P -h spfy_app01 --env-file env.list --name spfy_app01 -d spfy_app:latest 
+
+
+
+# App Description
 Django application for listing all Metadata for a Salesforce Org. This app is designed to run on Heroku, but could be amended to run locally or any desired server
 
 ![App Screenshot](packageBuilder.PNG)
@@ -18,13 +28,6 @@ Django application for listing all Metadata for a Salesforce Org. This app is de
   4.3 Save
   4.4 From API (Enable OAuth Settings) you will need Consume Key, Consumer Secret, Callback URL (heroku app url), API version
 
-#Heroku
-5) Create a Heroku account or you your own
-6) (Optional) Install Heroku CLI
-7) Using Shell navigate to project folder and run >  
-    5.1 Login in Heroku: heroku login
-    5.2 to deploy>git push heroku master
-
 ###Errors
 If the deployment fails you will need to complete the following steps from your Heroku Account
 8) Config Vars:{ProjectName} >Settings> Config Vars> add the following Vars
@@ -35,4 +38,4 @@ If the deployment fails you will need to complete the following steps from your 
 9) Resources: add Heroku Postgress Database or Alternative DB and Heroku Redis both are free but you need to config a credit card.
 
 ###Logs
-To view logs run > heroku logs --trail
+-- To-do
